@@ -1,0 +1,181 @@
+.root-class{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.headerComponent-header{
+    display: flex;
+    justify-content: space-around;
+    border: 3px solid #000;
+    margin-bottom: 70px; 
+    margin: 0 auto;
+    width: 700px; 
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.headerComponent-link{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;  
+    text-transform: uppercase;
+    padding-top: 8px;
+}
+.headerComponent-link:hover{
+    color: coral;
+}
+.homeComponent-h1{
+    margin-top: 200px;
+}
+.headerComponent-a{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;  
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.headerComponent-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;   
+}
+.loginComponent-input{
+    width: 300px;
+	font-size: 13px;
+	padding: 6px 0 4px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+    border-radius: 8px;
+    text-decoration: none;
+    outline:none;
+    margin-bottom: 5px;
+}
+.loginComponent-button{
+    margin-top: 10px;
+    text-decoration: none;
+    outline: none;
+    color: coral;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    background-size: 200% auto;
+}
+.loginComponent-h4{
+    margin-top: 40px;
+}
+.headerRegistration-h3{
+    margin-top: 40px;
+}
+.headerRegistration-input{
+    width: 200px;
+	font-size: 13px;
+	padding: 6px 0 4px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+    border-radius: 8px;
+    text-decoration: none;
+    outline:none;
+    margin-bottom: 5px;
+    margin-left: 55px;
+}
+.headerRegistration-label{
+    font-size: 18   px;
+    margin-left: 10px;
+    position: absolute;
+}
+.headerRegistration-button{
+    margin-top: 10px;
+    text-decoration: none;
+    outline: none;
+    color: coral;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    background-size: 200% auto;
+    font-size: 12px;
+}
+.headerRegistration-group{
+    margin-right: 30px;
+}
+.headerRegistration-button{
+    margin-left: 50px;
+}
+.homeComponent-user{
+    border: 2px solid #000;
+    width: 400px; 
+    text-align: left;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.homeComponent-users-name{
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+.homeComponent-users-data{
+    padding-left: 5px;
+}
+.homeLogic{
+    margin: auto;
+    display: inline-block;
+}
+.homeLogic-input{
+    width: 200px;
+	font-size: 13px;
+	padding: 6px 0 4px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+    border-radius: 8px;
+    text-decoration: none;
+    outline:none;
+    margin-bottom: 5px;
+}
+.homeLogic-input-upload{
+    width: 100px;
+	font-size: 13px;
+	padding: 6px 0 4px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+    border-radius: 8px;
+    text-decoration: none;
+    outline:none;
+    margin-bottom: 5px;
+}
+.homeLogic-button{
+    margin-top: 10px;
+    text-decoration: none;
+    outline: none;
+    color: coral;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    background-size: 200% auto;
+    margin-left: 20px;
+}
+.productsComponent-books{
+    display: inline-block;
+    margin: 15px;
+    margin-bottom: 40px;
+}
+.basketComponent{
+    align-content: center;
+    text-align: center;
+}
+.productsComponent-list{
+    display: block;
+}
+.productsComponent-books-card{
+    min-width: 100px;
+    max-width: 230px;
+    margin: 0 auto;
+}
+.productsComponent-books-card-media{
+    height: 0;
+    padding-top: 56.25%;
+}
+
