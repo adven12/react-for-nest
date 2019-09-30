@@ -1,16 +1,14 @@
 import { put, takeEvery , call} from "redux-saga/effects";
-import  {callApi}  from "../login/req";
-
+import  { callApi }  from "../request";
 
 export function* doUsers(): IterableIterator<any> {
-  yield takeEvery(`@@users/DO_DATAUSERS`, function* () {
+  yield takeEvery(`@@users/LOAD_USERS`, function* () {
     try {
       const users = yield call(callApi,'GET', 'users');
-      console.log(users.data);
               
     if(users){
         yield put({ 
-        type: `@@users/DATAUSERS_SUCCESS`,
+        type: `@@users/LOAD_USERS_SUCCESS`,
           payload: {
           dataUsers: users.data,
           }
@@ -19,7 +17,7 @@ export function* doUsers(): IterableIterator<any> {
        
 }catch (error) {
     yield put({
-      type: `@@users/DATAUSERS_ERROR`,
+      type: `@@users/LOAD_USERS_ERROR`,
       payload: {
         error: error.message
       }

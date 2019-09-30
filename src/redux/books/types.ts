@@ -1,5 +1,5 @@
  
-  export interface ProductsState {
+  export interface BooksState {
     dataProducts: string,
     book: string,
     dataArr: [],
@@ -8,10 +8,10 @@
     countBooks: number,
   }
 
-  export interface ProductsRequest{
+  export interface BooksRequest{
     addToBasket: string;
   }
-  export interface ProductsModalState  {
+  export interface BooksModalState  {
     picture: string,
     name: string,
     descript:string,
@@ -22,6 +22,4 @@
     product: any,
     full_descript: string,
   }
-  // export interface book {
-  //   book: string;
-  // }
+

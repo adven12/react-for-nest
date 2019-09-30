@@ -1,6 +1,4 @@
-
 import { RegistrationRequest } from "./types";
-
 
 export function doRegistration(data: RegistrationRequest) {
   return {

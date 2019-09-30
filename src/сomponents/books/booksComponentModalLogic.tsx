@@ -1,23 +1,23 @@
 import React from "react";
-import { ProductsModalState} from "../../redux/products/types";
+import { BooksModalState} from "../../redux/books/types";
 import { connect } from "react-redux";
 import { Button } from "@material-ui/core";
 import { RootState } from "../../redux/rootReducer";
 import no_picture from "../../img/no_picture.png"; 
-import { doProducts, createProducts } from "../../redux/products/actions";
+import { doBooks, createBooks } from "../../redux/books/actions";
 
-export interface ProductsModalProps {
-    doProducts: () => object;
-    createProducts: (data:any) => object;
+export interface BooksModalProps {
+    doBooks: () => object;
+    createBooks: (data:any) => object;
     changePhoto: string;
     handleClose: Function;
   }
   const mapStateToProps = (state:RootState) => ({
-    changePhoto: state.products.dataProducts,
+    changePhoto: state.books.dataProducts,
   });
- class ProductsComponentModalLogic extends React.Component<ProductsModalProps, ProductsModalState> {
+ class BooksComponentModalLogic extends React.Component<BooksModalProps, BooksModalState> {
    [x: string]: any;
-    state: ProductsModalState = {
+    state: BooksModalState = {
         picture: "", 
         name: "",
         descript: "",
@@ -51,10 +51,10 @@ export interface ProductsModalProps {
           newSave.picture = this.no_picturePhoto;
         }       
        
-          const { createProducts } = this.props;
-          createProducts(newSave);
-          const { doProducts } = this.props;
-          doProducts(); 
+          const { createBooks } = this.props;
+          createBooks(newSave);
+          const { doBooks } = this.props;
+          doBooks(); 
           this.props.handleClose();
     };
 
@@ -135,5 +135,5 @@ export interface ProductsModalProps {
 }
 export default connect(
     mapStateToProps,
-    { doProducts, createProducts }
-  )(ProductsComponentModalLogic);
+    { doBooks, createBooks }
+  )(BooksComponentModalLogic);

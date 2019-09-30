@@ -1,7 +1,6 @@
 import { put, takeEvery , call} from "redux-saga/effects";
-import  {callApi}   from "../../redux/login/req";
+import  { callApi }   from "../request";
     
-
 export function* doRegistration(): IterableIterator<any> {
   yield takeEvery(`@@registration/DO_REGISTRATION`, function* (action: any) {
     try {

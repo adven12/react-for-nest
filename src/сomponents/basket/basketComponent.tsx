@@ -74,11 +74,9 @@ const  BasketComponent: React.FC<BasketProps> = (props:any) => {
   )
 return state.countBooks
 }
- 
 console.log(props.basketBooks);
 console.log(props.currentBook);
 console.log(props.allBooks);
-
 
   return (
       <div className="basketComponent">

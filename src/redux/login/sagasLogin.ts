@@ -1,23 +1,16 @@
 import { put, takeEvery, call, delay } from "redux-saga/effects";
-import { callApi } from "./req";
+import { callApi } from "../request";
 import jwt_decode  from "jwt-decode"
 
 
 export function* doLogin(): IterableIterator<any> {
   yield takeEvery(`@@login/DO_LOGIN`, function* (action: any) {
-    try {
-      console.log(action.data);
-      
+    try {      
       const user = yield call(callApi, 'POST', 'login', action.data);
-
-      console.log('ff',user.token);
       let data:any
       try {
           data  =  jwt_decode (user.token);
-        console.log(data);
-      //  допустимый формат токена 
      } catch (error) {
-        // неверный формат токена 
      }
       // const {
       //   data: { email, password },
@@ -34,7 +27,7 @@ export function* doLogin(): IterableIterator<any> {
             token: user.token,
         });
         yield put({
-          type: `@@users/DO_DATAUSERS`,
+          type: `@@users/LOAD_USERS`,
         });
       } else {
         yield put({

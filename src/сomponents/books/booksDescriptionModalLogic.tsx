@@ -1,9 +1,8 @@
 import React from "react";
-import { DescriptionModalState,  ProductsRequest } from "../../redux/products/types";
+import { DescriptionModalState,  BooksRequest } from "../../redux/books/types";
 import { connect } from "react-redux";
 import { RootState } from "../../redux/rootReducer";
-import { doProductChange } from "../../redux/products/actions";
-
+import { doBooksChange } from "../../redux/books/actions";
 
 const mapStateToProps = (state: RootState) => ({
 
@@ -11,9 +10,9 @@ const mapStateToProps = (state: RootState) => ({
 export interface DescriptionModalProps {
     product: any;
     handleClose: Function;
-    doProductChange: (data:ProductsRequest,id:ProductsRequest) => object;
+    doBooksChange: (data:BooksRequest,id:BooksRequest) => object;
   }
- class ProductsDescriptionModalLogic extends React.Component<DescriptionModalProps, DescriptionModalState> {
+ class BooksDescriptionModalLogic extends React.Component<DescriptionModalProps, DescriptionModalState> {
    [x: string]: any;
     state: DescriptionModalState = {
         product: "",
@@ -26,8 +25,8 @@ export interface DescriptionModalProps {
     add = ():any => {
         let full_descript:any = document.querySelector('#new_full_descript');    
         this.props.product.full_descript =  full_descript.value 
-        const { doProductChange } = this.props;
-        doProductChange(this.props.product,this.props.product._id)
+        const { doBooksChange } = this.props;
+        doBooksChange(this.props.product,this.props.product._id)
 
         this.props.handleClose();
     };
@@ -53,5 +52,5 @@ export interface DescriptionModalProps {
 }
 export default connect(
   mapStateToProps,
-  { doProductChange }
-)(ProductsDescriptionModalLogic);
+  { doBooksChange }
+)(BooksDescriptionModalLogic);

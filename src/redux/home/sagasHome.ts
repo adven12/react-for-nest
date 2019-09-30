@@ -1,5 +1,5 @@
 import { put, takeEvery, call } from "redux-saga/effects";
-import { callApi } from "../../redux/login/req";
+import { callApi } from "../request";
 
 
 export function* sagaHome(): IterableIterator<any> {
@@ -17,16 +17,6 @@ export function* sagaHome(): IterableIterator<any> {
         headers: { "Content-Type": "application/json", "Accept": "application/json", 'Authorization' : `Bearer ${token}`},
         body: JSON.stringify(data)
       })
-     
-      console.log(answerApi);
-      // const user = yield call(callApi, 'POST', 'v1/authenticate', data);
-      // const user = fetch(`http://localhost:3000/v1/users/${id}`, {
-      //   method: "GET",
-      //   headers: { "Content-Type": "application/json", "Accept": "application/json"},  
-      //   // 'Authorization' : `Bearer ${data}`
-      // })
-      // const user = users.find((users: any) => id === users.id)
-      // console.log(user);
       
       yield put({ 
         type: `@@home/DO_HOME_CHANGE_CALL`,

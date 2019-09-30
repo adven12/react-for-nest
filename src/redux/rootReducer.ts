@@ -1,4 +1,3 @@
-    
 import { Reducer, combineReducers } from "redux";
 import { LoginState } from "./login/types";
 import { loginReducer } from "./login/reducer";
@@ -9,8 +8,8 @@ import { RegistrationState } from "../redux/registration/types";
 import { registrationReducer } from "./registration/reducer";
 import { UsersState } from "./users/types"
 import { usersReducer } from "./users/reducer";
-import { productsReducer } from "./products/reducer";
-import { ProductsState } from "./products/types";
+import { booksReducer } from "./books/reducer";
+import { BooksState } from "./books/types";
 import { ErrorState } from "./error/types";
 
 
@@ -21,7 +20,7 @@ export interface RootState {
   home: HomeState;
   registration: RegistrationState;
   users: UsersState;
-  products: ProductsState;
+  books: BooksState;
 }
 
 const rootReducer: Reducer<RootState> = combineReducers<RootState>({
@@ -30,7 +29,7 @@ const rootReducer: Reducer<RootState> = combineReducers<RootState>({
   home: homeReducer,
   registration: registrationReducer,
   users: usersReducer,
-  products: productsReducer,
+  books: booksReducer,
 });
 export default rootReducer;
   

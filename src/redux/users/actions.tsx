@@ -1,4 +1,3 @@
-
 export function doUsers() {
-  return { type: `@@users/DO_DATAUSERS` };
+  return { type: `@@users/LOAD_USERS` };
 }

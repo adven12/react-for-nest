@@ -10,8 +10,8 @@ import HomeContainer from "./сontainers/homeContainer";
 import RegistrationContainer from "./сontainers/registrationContainer";
 import HeaderContainer from "./сontainers/headerContainer";
 import UsersContainer from "./сontainers/usersContainer";
-import ProductsContainer from "./сontainers/productsContainer";
-import ProductsDescription from "./сomponents/products/productsDescription";
+import BooksContainer from "./сontainers/booksContainer";
+import BooksDescription from "./сomponents/books/booksDescription";
 import "./rootStyle.css"
 
 
@@ -21,7 +21,7 @@ export const Path = {
   home: "/home",
   logout: "/logout",
   users: "/users",
-  products: "/products",
+  books: "/books",
   description: "/description/:id",
 };
 
@@ -37,10 +37,9 @@ export default () => (
         <Route path={Path.registration} component={RegistrationContainer} />
         <Route path={Path.home} component={HomeContainer} />
         <Route path={Path.users} component={UsersContainer} />
-        <Route path={Path.products} component={ProductsContainer} />
-        <Route path={Path.description} component={ProductsDescription} />
+        <Route path={Path.books} component={BooksContainer} />
+        <Route path={Path.description} component={BooksDescription} />
      </div>
-
   </Router>
         
   </Provider>

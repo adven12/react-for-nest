@@ -1,7 +1,7 @@
 import { RootState } from "../rootReducer";
-import { ProductsState } from "./types";
+import { BooksState } from "./types";
 
-export const initialState: ProductsState = {
+export const initialState: BooksState = {
   dataProducts: "",
   book: "",
   dataArr: [],
@@ -10,12 +10,12 @@ export const initialState: ProductsState = {
   countBooks: 0,
 };
 
-export function productsReducer(state: ProductsState = initialState, action: any) {
+export function booksReducer(state: BooksState = initialState, action: any) {
   switch (action.type) {
-    case `GET_ALL_BOOKS`: {
+    case `@@books/GET_ALL_BOOKS`: {
       return initialState;
     }
-    case `DELETE_BOOK`: {
+    case `@@books/DELETE_BOOK`: {
       const { data, allBooks } = action;
 
       allBooks.map((text: any, index: any) => (
@@ -36,14 +36,14 @@ export function productsReducer(state: ProductsState = initialState, action: any
         dataProducts,
       };
     }
-    case `@@DATAPRODUCTS_ERROR`: {
+    case `BOOKS_ERROR`: {
       const { error } = action.payload;
       return {
         ...state,
         error: error
       };
     }
-    case `DO_PRODUCTS_TO_BASKET`: {
+    case `@@books/DO_BOOK_TO_BASKET`: {
       let newState = JSON.parse(JSON.stringify(state))
       const { book } = action;
 
@@ -116,12 +116,12 @@ export function productsReducer(state: ProductsState = initialState, action: any
         numberBooks:  book.quantity,
       };
     }
-    case `CREATE_BOOKS`: {   
+    case `@@books/CREATE_BOOK`: {   
       return {
         ...state,
       };
     }
-    case `DO_BOOK_CHANGE`: {   
+    case `@@books/DO_BOOK_CHANGE`: {   
       return {
         ...state,
       };
@@ -131,4 +131,4 @@ export function productsReducer(state: ProductsState = initialState, action: any
   }
 }
 
-export const products = (state: RootState) => state.products;
+export const books = (state: RootState) => state.books;

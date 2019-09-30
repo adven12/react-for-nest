@@ -1,4 +1,3 @@
-
   export interface LoginState {
     email: string;
     password: string;
@@ -7,7 +6,6 @@
     data: any,
     token: string,
   }
-  
   export interface LoginRequest {
     username: string;
     password: string;

@@ -4,7 +4,7 @@ import { RootState } from '../../redux/rootReducer';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { Card, CardContent, CardMedia, Typography, Button, Modal } from '@material-ui/core';
-import ProductsDescriptionModalLogic from './productsDescriptionModalLogic';
+import BooksDescriptionModalLogic from './booksDescriptionModalLogic';
 import no_picture from "../../img/no_picture.png"; 
 
 
@@ -29,14 +29,14 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 const mapStateToProps = (state: RootState) => ({
-  dataProducts: state.products.dataProducts,
+  dataProducts: state.books.dataProducts,
   data: state.login.data
 });
-export interface ProductsProps {
+export interface BooksProps {
   isLog: boolean,
 }
 
-const ProductsDescription: React.FC<any> = (props) => {
+const BooksDescription: React.FC<any> = (props) => {
 
   const classes = useStyles({});
   const [open, setOpen] = React.useState(false);
@@ -50,16 +50,16 @@ const ProductsDescription: React.FC<any> = (props) => {
   };
  
   return (
-    <div className="productsDescription">
+    <div className="booksDescription">
      {props.isLog || props.isLog == undefined ? (
      props.dataProducts.map((item:any, index:any) => (
      props.match.params.id == item._id ? (
       <div key={index}>
       <div>
-     <Card className="productsComponent-books-card" >
+     <Card className="booksComponent-books-card" >
      <CardContent>
      <CardMedia
-          className="productsComponent-books-card-media"
+          className="booksComponent-books-card-media"
           image={no_picture}
           title="Paella dish"
           id={item._id}
@@ -91,7 +91,7 @@ const ProductsDescription: React.FC<any> = (props) => {
         <div  className={classes.paper}>
         <h3 id="simple-modal-title">Enter a new description</h3>
         <div id="simple-modal-description">
-          <ProductsDescriptionModalLogic product={item} handleClose={handleClose}/>
+          <BooksDescriptionModalLogic product={item} handleClose={handleClose}/>
         </div>
         </div>
         </Modal>
@@ -107,4 +107,4 @@ const ProductsDescription: React.FC<any> = (props) => {
 }
 export default connect(
   mapStateToProps,
-)(ProductsDescription);
+)(BooksDescription);

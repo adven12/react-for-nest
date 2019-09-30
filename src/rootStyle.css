@@ -157,7 +157,7 @@
     background-size: 200% auto;
     margin-left: 20px;
 }
-.productsComponent-books{
+.booksComponent-books{
     display: inline-block;
     margin: 15px;
     margin-bottom: 40px;
@@ -166,15 +166,15 @@
     align-content: center;
     text-align: center;
 }
-.productsComponent-list{
+.booksComponent-list{
     display: block;
 }
-.productsComponent-books-card{
+.booksComponent-books-card{
     min-width: 100px;
     max-width: 230px;
     margin: 0 auto;
 }
-.productsComponent-books-card-media{
+.booksComponent-books-card-media{
     height: 0;
     padding-top: 56.25%;
 }

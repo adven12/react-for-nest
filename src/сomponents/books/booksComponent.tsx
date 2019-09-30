@@ -1,6 +1,6 @@
 import React from "react";
-import { ProductsState, ProductsRequest } from "../../redux/products/types";
-import ProductsComponentModal from "../products/productsComponentModal"
+import { BooksState, BooksRequest } from "../../redux/books/types";
+import BooksComponentModal from "./booksComponentModal"
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -18,17 +18,17 @@ const AdapterLink = React.forwardRef<HTMLAnchorElement, LinkProps>((props, ref) 
   <Link innerRef={ref as any} {...props} />
 ));
 
-export interface ProductsProps {
-  doProducts: () => object;
-  doProductsToBasket: (data: ProductsRequest) => object;
-  doProductsUpdate: (data: ProductsRequest,allBooks:ProductsRequest) => object;
+export interface BooksProps {
+  doBooks: () => object;
+  doBooksToBasket: (data: BooksRequest) => object;
+  doBooksUpdate: (data: BooksRequest,allBooks:BooksRequest) => object;
   isLog: boolean,
   dataProducts: string,
   data: [],
 }
 
-class ProductComponent extends React.Component<any, any> {
-  state: ProductsState = {
+class BooksComponent extends React.Component<any, any> {
+  state: BooksState = {
     dataProducts: "",
     book: "",
     dataArr: [],
@@ -39,8 +39,8 @@ class ProductComponent extends React.Component<any, any> {
 
 
   handleBuy = (book:any) => {
-      const { doProductsToBasket } = this.props;
-      doProductsToBasket(book);
+      const { doBooksToBasket } = this.props;
+      doBooksToBasket(book);
       
     const localParce = loadState();
      //upload new data in localStorage            
@@ -48,8 +48,8 @@ class ProductComponent extends React.Component<any, any> {
   }
 
   handleDel = (id: any) => { 
-    const { doProductsUpdate } = this.props;
-    doProductsUpdate(id, this.props.dataProducts );
+    const { doBooksUpdate } = this.props;
+    doBooksUpdate(id, this.props.dataProducts );
   };
 
   render() {
@@ -57,16 +57,16 @@ class ProductComponent extends React.Component<any, any> {
      console.log(this.props.data);
 
     if (this.props.dataProducts.length <= 0 ) {
-      const { doProducts } = this.props;
-      doProducts(); 
+      const { doBooks } = this.props;
+      doBooks(); 
     }
     console.log(this.props.dataProducts);
     
     return (
-      <div className="productsComponent">
+      <div className="booksComponent">
         {this.props.isLog ? 
         (
-        <div className="productsComponent-list ">
+        <div className="booksComponent-list ">
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <DebounceInput
@@ -80,11 +80,11 @@ class ProductComponent extends React.Component<any, any> {
             (
               this.props.dataProducts.map((text: any, index: any) => (
                 text.name.includes(this.state.search) ? (
-                  <div className="productsComponent-books" key={index}>
-                    <Card className="productsComponent-books-card" >
+                  <div className="booksComponent-books" key={index}>
+                    <Card className="booksComponent-books-card" >
                       <CardContent>
                         <CardMedia
-                          className="productsComponent-books-card-media"
+                          className="booksComponent-books-card-media"
                           image={no_picture}
                           title="Paella dish"
                           id={text._id}
@@ -128,7 +128,7 @@ class ProductComponent extends React.Component<any, any> {
           <br />
           {this.props.data.permissions.map((item:any, index:any) => (    
             item ===  "admin" ? (
-              <ProductsComponentModal />
+              <BooksComponentModal />
             ) : (null)))
           }
         </div>
@@ -138,5 +138,5 @@ class ProductComponent extends React.Component<any, any> {
     );
   }
 }
-export default ProductComponent;
+export default BooksComponent;
 

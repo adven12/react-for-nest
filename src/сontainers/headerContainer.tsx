@@ -7,7 +7,7 @@ const mapStateToProps = (state: RootState) => ({
   isLog: state.login.isLog,
   data: state.login.data,
   token: state.login.token,
-  basketBooks: state.products.dataArr,
+  basketBooks: state.books.dataArr,
 });
 
 export default connect(

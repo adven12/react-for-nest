@@ -1,4 +1,3 @@
-
 export interface RegistrationState  {
   email: string;
   password: string;

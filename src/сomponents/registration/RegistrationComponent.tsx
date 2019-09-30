@@ -1,7 +1,7 @@
 import React from "react";
 import {RegistrationState, RegistrationRequest } from "../../redux/registration/types";
 import { Redirect } from 'react-router-dom'
-import  {callApi}   from "../../redux/login/req";
+import  { callApi }   from "../../redux/request";
 
 export interface RegistrationProps {
   doRegistration: (data: RegistrationRequest) => object;

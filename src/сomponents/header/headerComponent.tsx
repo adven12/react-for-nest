@@ -96,10 +96,9 @@ const HeaderComponent: React.FC = (props: any) => {
               <div key={index}>
                 <header className="headerComponent-header">
                   <Link className="headerComponent-link" to="/users">Users</Link>
-                  <Link className="headerComponent-link" to="/products">Products</Link>
+                  <Link className="headerComponent-link" to="/books">Books</Link>
                   <Link onClick={() => logout()} className="headerComponent-link " to="/login">Logout</Link>
                 </header>
-                {/* <Redirect to='/users' /> */}
               </div>
 
             ) : (
@@ -124,7 +123,7 @@ const HeaderComponent: React.FC = (props: any) => {
                 </Modal>
 
                 <Link className="headerComponent-link" to="/home">Home</Link>
-                <Link className="headerComponent-link" to="/products">Products</Link>
+                <Link className="headerComponent-link" to="/books">Books</Link>
                 <Link onClick={() => logout()} className="headerComponent-link headerComponent-a" to="/">Logout</Link>
               </header>
             )   )))
