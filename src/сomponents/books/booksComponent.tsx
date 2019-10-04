@@ -111,12 +111,11 @@ class BooksComponent extends React.Component<any, any> {
                         </Typography>
                       </CardContent>
                       <CardActions>
-                        {this.props.data.permissions.map((item:any, index:any) => (    
-                        item ===  "admin" ? (
+                        {this.props.data.isAdmin ===  true ? (
                             <div>
                               <Button size="small" onClick={() => this.handleDel(text._id)}>Del</Button>
                             </div>
-                          ) : (<Button size="small" onClick={() => this.handleBuy(text)} id={text.id}>Buy</Button>)))
+                          ) : (<Button size="small" onClick={() => this.handleBuy(text)} id={text.id}>Buy</Button>)
                         }</CardActions>
                     </Card>
                   </div>
@@ -126,10 +125,9 @@ class BooksComponent extends React.Component<any, any> {
             ) : (null)
           }
           <br />
-          {this.props.data.permissions.map((item:any, index:any) => (    
-            item ===  "admin" ? (
+          {this.props.data.isAdmin ===  true ? (
               <BooksComponentModal />
-            ) : (null)))
+            ) : (null)
           }
         </div>
         ) : (<Redirect to="/login"/>)

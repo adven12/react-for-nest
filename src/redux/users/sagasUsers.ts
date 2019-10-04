@@ -5,6 +5,7 @@ export function* doUsers(): IterableIterator<any> {
   yield takeEvery(`@@users/LOAD_USERS`, function* () {
     try {
       const users = yield call(callApi,'GET', 'users');
+       console.log(users);
               
     if(users){
         yield put({ 

@@ -37,10 +37,9 @@ const UsersComponent: React.FC = (props: any) => {
   console.log(props.dataUsers);
   return (
     <div className="usersComponent">
-      {props.data.permissions.map ((item:any, index:any) => (       
-        item === "admin" ? (
+      {props.data.isAdmin === true ? (
         props.dataUsers ? (
-          <div key={index}>
+          <div>
             <Paper className={classes.root}>
               <Table className={classes.table}>
                 <TableHead>
@@ -69,7 +68,7 @@ const UsersComponent: React.FC = (props: any) => {
           </div>
         ) : null
 
-        ) : (<Redirect to="/login" />)))
+        ) : (<Redirect to="/login" />)
       }
     </div>
   );

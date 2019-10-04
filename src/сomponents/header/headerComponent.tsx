@@ -89,11 +89,9 @@ const HeaderComponent: React.FC = (props: any) => {
             <Link className="headerComponent-link" to="/Registration">Registration</Link>
           </header>
         ) : (
-          props.data.permissions.map ((item:any, index:any) => (    
-
-            item === "admin" ?
+          props.data.isAdmin === true ?
             (
-              <div key={index}>
+              <div>
                 <header className="headerComponent-header">
                   <Link className="headerComponent-link" to="/users">Users</Link>
                   <Link className="headerComponent-link" to="/books">Books</Link>
@@ -102,7 +100,7 @@ const HeaderComponent: React.FC = (props: any) => {
               </div>
 
             ) : (
-              <header className="headerComponent-header" key={index}>
+              <header className="headerComponent-header">
                 <img src={defoltPhoto} alt="avatar" id="photoMin" className="headerComponent-img" />
                 <Badge badgeContent={sumQuantity()}>
                   <img src={basket} alt="basket" id="basket" className="headerComponent-img" aria-controls="simple-menu" aria-haspopup="true" onClick={(e: any) => handleOpen(e)} />
@@ -126,7 +124,7 @@ const HeaderComponent: React.FC = (props: any) => {
                 <Link className="headerComponent-link" to="/books">Books</Link>
                 <Link onClick={() => logout()} className="headerComponent-link headerComponent-a" to="/">Logout</Link>
               </header>
-            )   )))
+            )   )
 
       }
 

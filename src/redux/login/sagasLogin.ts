@@ -4,7 +4,7 @@ import jwt_decode  from "jwt-decode"
 
 
 export function* doLogin(): IterableIterator<any> {
-  yield takeEvery(`@@login/DO_LOGIN`, function* (action: any) {
+  yield takeEvery(`@@login/DO_LOGIN`, function* (action: any) { 
     try {      
       const user = yield call(callApi, 'POST', 'login', action.data);
       let data:any
@@ -12,6 +12,8 @@ export function* doLogin(): IterableIterator<any> {
           data  =  jwt_decode (user.token);
      } catch (error) {
      }
+     console.log(data);
+     
       // const {
       //   data: { email, password },
       // } = action;
@@ -26,7 +28,7 @@ export function* doLogin(): IterableIterator<any> {
             data: data,
             token: user.token,
         });
-        yield put({
+        yield put({         
           type: `@@users/LOAD_USERS`,
         });
       } else {

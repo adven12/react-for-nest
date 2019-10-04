@@ -34,15 +34,15 @@ export class RegistrationComponent extends React.Component<RegistrationProps, Re
       <div className="headerRegistration">
         <div>
           <button
-            onClick={(e:any) => {
-              let qqq:any = {}
-              console.log(callApi("GET", "users", {}, "http://localhost:3002")
-              .then((res:any) => console.log(qqq = {...res}))
-              .then((res:any)=> console.log(JSON.stringify(qqq)))
-              .then((res:any) => console.log({...res}))
-              .then())
+            // onClick={(e:any) => {
+            //   let qqq:any = {}
+            //   console.log(callApi("GET", "users", {}, "http://localhost:3002")
+            //   .then((res:any) => console.log(qqq = {...res}))
+            //   .then((res:any)=> console.log(JSON.stringify(qqq)))
+            //   .then((res:any) => console.log({...res}))
+            //   .then())
               
-            }}
+            // }}
           >
             test
           </button>

@@ -77,10 +77,9 @@ const BooksDescription: React.FC<any> = (props) => {
       </div>
       <div>
       <br/>
-      {props.data.permissions.map((item:any, index:any) => (    
-      item ===  "admin" ? (
+      {props.data.isAdmin ===  true ? (
       <Button size="small" onClick={handleOpen}>Сhange Description</Button>
-      ): (null)))
+      ): (null)
       }
        <Modal className={classes.location}
           aria-labelledby="simple-modal-title"

@@ -45,7 +45,7 @@ export interface BooksModalProps {
             descript: this.state.descript,
             price: Number(this.state.price),
             picture: this.state.picture,
-            full_discript: this.state.full_descript,
+            full_descript: this.state.full_descript,
         };
         if(newSave.picture === "" || this.state.picture === undefined){
           newSave.picture = this.no_picturePhoto;

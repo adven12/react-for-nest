@@ -30,13 +30,14 @@ export class LoginComponent extends React.Component<LoginProps, LoginState> {
   };
 
   render() {  
+    console.log(this.props.data.isAdmin);
+    
     return (
         <div className="loginComponent">
-              {this.props.isLog ? (
-              this.props.data.permissions.map((item:any, index:any) => (    
-              item ===  "admin" ? (
-              <Redirect key={index} to="/users" />
-              ) : (<Redirect to="/home" />)))
+              {this.props.isLog ? ( 
+              this.props.data.isAdmin ===  true ? (
+              <Redirect to="/users" />
+              ) : (<Redirect to="/home" />)
               ):(null)}
 
          <ErrorComponent />    
