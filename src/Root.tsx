@@ -5,12 +5,12 @@ import { Route, BrowserRouter as Router } from "react-router-dom";
 import { Store } from "redux";
 import configureStore from "./redux/store";
 import { RootState } from "./redux/rootReducer";
-import LoginContainer from "./сontainers/loginContainer";
-import HomeContainer from "./сontainers/homeContainer";
-import RegistrationContainer from "./сontainers/registrationContainer";
-import HeaderContainer from "./сontainers/headerContainer";
-import UsersContainer from "./сontainers/usersContainer";
-import BooksContainer from "./сontainers/booksContainer";
+import LoginContainer from "./сontainers/login.container";
+import HomeContainer from "./сontainers/home.container";
+import RegistrationContainer from "./сontainers/registration.container";
+import HeaderContainer from "./сontainers/header.container";
+import UsersContainer from "./сontainers/users.container";
+import BooksContainer from "./сontainers/books.container";
 import BooksDescription from "./сomponents/books/booksDescription";
 import "./rootStyle.css"
 

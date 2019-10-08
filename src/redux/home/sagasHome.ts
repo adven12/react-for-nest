@@ -1,5 +1,5 @@
 import { put, takeEvery, call } from "redux-saga/effects";
-import { callApi } from "../request";
+import { callApi } from "../../services/request";
 
 
 export function* sagaHome(): IterableIterator<any> {

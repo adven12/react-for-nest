@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import avatar from "../../img/avatar.png";
 import basket from "../../img/basket.png";
-import BasketContainer from "../../сontainers/basketContainer"
+import BasketContainer from "../../сontainers/basket.container"
 import jwt_decode  from "jwt-decode"
 import Badge from '@material-ui/core/Badge';
 import { createStyles, makeStyles, Theme, Modal } from "@material-ui/core";

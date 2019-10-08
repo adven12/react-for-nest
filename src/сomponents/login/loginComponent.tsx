@@ -2,7 +2,7 @@ import * as React from "react";
 import { LoginState,  LoginRequest } from "../../redux/login/types";
 import '../../rootStyle.css'
 import { Redirect } from 'react-router-dom'
-import  ErrorComponent  from "../../сontainers/errorContainer"
+import  ErrorComponent  from "../../сontainers/error.container"
  
 export interface LoginProps {
   doLogin: (data: LoginRequest) => object;

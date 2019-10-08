@@ -1,5 +1,5 @@
 import { put, takeEvery , call} from "redux-saga/effects";
-import  { callApi }   from "../request";
+import  { callApi }   from "../../services/request";
     
 export function* doRegistration(): IterableIterator<any> {
   yield takeEvery(`@@registration/DO_REGISTRATION`, function* (action: any) {
