@@ -111,7 +111,7 @@ class BooksComponent extends React.Component<any, any> {
                         </Typography>
                       </CardContent>
                       <CardActions>
-                        {this.props.data.isAdmin ===  true ? (
+                        {this.props.data.isAdmin ===  'admin' ? (
                             <div>
                               <Button size="small" onClick={() => this.handleDel(text._id)}>Del</Button>
                             </div>
@@ -125,7 +125,7 @@ class BooksComponent extends React.Component<any, any> {
             ) : (null)
           }
           <br />
-          {this.props.data.isAdmin ===  true ? (
+          {this.props.data.isAdmin ===  'admin' ? (
               <BooksComponentModal />
             ) : (null)
           }

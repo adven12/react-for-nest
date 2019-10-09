@@ -77,7 +77,7 @@ const BooksDescription: React.FC<any> = (props) => {
       </div>
       <div>
       <br/>
-      {props.data.isAdmin ===  true ? (
+      {props.data.isAdmin ===  'admin' ? (
       <Button size="small" onClick={handleOpen}>Сhange Description</Button>
       ): (null)
       }

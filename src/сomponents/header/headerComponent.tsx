@@ -89,7 +89,7 @@ const HeaderComponent: React.FC = (props: any) => {
             <Link className="headerComponent-link" to="/Registration">Registration</Link>
           </header>
         ) : (
-          props.data.isAdmin === true ?
+          props.data.isAdmin === 'admin' ?
             (
               <div>
                 <header className="headerComponent-header">

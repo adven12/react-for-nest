@@ -37,7 +37,7 @@ const UsersComponent: React.FC = (props: any) => {
   console.log(props.dataUsers);
   return (
     <div className="usersComponent">
-      {props.data.isAdmin === true ? (
+      {props.data.isAdmin === 'admin' ? (
         props.dataUsers ? (
           <div>
             <Paper className={classes.root}>

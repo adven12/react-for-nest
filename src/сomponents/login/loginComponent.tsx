@@ -35,7 +35,7 @@ export class LoginComponent extends React.Component<LoginProps, LoginState> {
     return (
         <div className="loginComponent">
               {this.props.isLog ? ( 
-              this.props.data.isAdmin ===  true ? (
+              this.props.data.isAdmin ===  'admin' ? (
               <Redirect to="/users" />
               ) : (<Redirect to="/home" />)
               ):(null)}
