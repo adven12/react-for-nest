@@ -12,6 +12,7 @@ import HeaderContainer from "./сontainers/header.container";
 import UsersContainer from "./сontainers/users.container";
 import BooksContainer from "./сontainers/books.container";
 import BooksDescription from "./сomponents/books/booksDescription";
+import OrderContainer from "./сontainers/order.container";
 import "./rootStyle.css"
 
 
@@ -23,6 +24,7 @@ export const Path = {
   users: "/users",
   books: "/books",
   description: "/description/:id",
+  order: "/order",
 };
 
 const store: Store<RootState> = configureStore();
@@ -39,6 +41,7 @@ export default () => (
         <Route path={Path.users} component={UsersContainer} />
         <Route path={Path.books} component={BooksContainer} />
         <Route path={Path.description} component={BooksDescription} />
+        <Route path={Path.order} component={OrderContainer} />
      </div>
   </Router>
         

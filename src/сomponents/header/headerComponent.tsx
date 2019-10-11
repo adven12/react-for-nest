@@ -114,7 +114,7 @@ const HeaderComponent: React.FC = (props: any) => {
                   <div className={classes.paper}>
                     <h3 id="simple-modal-title">Basket</h3>
                     <div id="simple-modal-description">
-                      <BasketContainer />
+                      <BasketContainer handleClose = {handleClose}/>
                     </div>
 
                   </div>

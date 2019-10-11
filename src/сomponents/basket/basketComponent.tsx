@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import {CardMedia } from "@material-ui/core";
 import no_picture from "../../img/no_picture.png";
-
+import { Link, Redirect } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) => 
   createStyles({
@@ -39,6 +39,8 @@ export interface BasketProps {
   cleanAllBasket: () => object;
   cleanOneBasket: (data:any,numberBooks:any) => object;
   AddOneBasket: (numberBooks:any,countBooks:number, book:any) => object;
+  doOrder: (basketBooks:any) => object;
+  handleClose: Function; 
   allBooks: string,
   currentBook: string,
   basketBooks: any,
@@ -77,6 +79,12 @@ return state.countBooks
 console.log(props.basketBooks);
 console.log(props.currentBook);
 console.log(props.allBooks);
+
+const userOrder = () =>{
+  const { doOrder } = props;
+  doOrder(props.basketBooks);   
+  props.handleClose();     
+}
 
   return (
       <div className="basketComponent">
@@ -123,7 +131,7 @@ console.log(props.allBooks);
         Sum products: {sumBooks()}
         </Typography> 
         <Button onClick={() => cleanBasket()}>cleanBasket</Button><br />
-        <Button>Place your order</Button> 
+        <Link onClick={() => userOrder()} to="/order">Place your order</Link> 
         </div>
 
        </div> 
