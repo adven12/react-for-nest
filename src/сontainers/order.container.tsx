@@ -1,14 +1,12 @@
 import { RootState } from "../redux/rootReducer";
 import { connect } from "react-redux";
 import OrderComponent from "../сomponents/order/orderComponent";
-// import { cleanAllBasket, cleanOneBasket, AddOneBasket } from "../redux/basket/actions";
 
 const mapStateToProps = (state: RootState) => ({
-basketBooks: state.books.dataArr,
-allBooks: state.books.dataProducts,
+data: state.login.data,
+allOrders: state.orders.allOrders,
 });
 
 export default connect(
   mapStateToProps,
-
 )(OrderComponent);

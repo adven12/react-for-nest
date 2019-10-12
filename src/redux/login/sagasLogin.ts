@@ -20,6 +20,9 @@ export function* doLogin(): IterableIterator<any> {
         yield put({         
           type: `@@users/LOAD_USERS`,
         });
+        yield put({         
+          type: `@@order/LOAD_ORDERS`,
+        });
       } else {
         yield put({
           type: `@@error/SHOW_ERROR`,

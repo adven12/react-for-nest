@@ -103,7 +103,7 @@ export function* doBooksUpdate(): IterableIterator<any> {
         console.log('1111 ', action.data);
            
           try {        
-            const  answerApi = yield call (callApi,'POST', `order/order`, action.data); 
+            const  answerApi = yield call (callApi,'POST', `orders`, action.data); 
             console.log(answerApi);
              
               // yield put ({

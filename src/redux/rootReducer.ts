@@ -11,6 +11,8 @@ import { usersReducer } from "./users/reducer";
 import { booksReducer } from "./books/reducer";
 import { BooksState } from "./books/types";
 import { ErrorState } from "./error/types";
+import { OrdersState } from "./order/types";
+import { ordersReducer } from "./order/reducer";
 
 
 
@@ -21,6 +23,7 @@ export interface RootState {
   registration: RegistrationState;
   users: UsersState;
   books: BooksState;
+  orders: OrdersState;
 }
 
 const rootReducer: Reducer<RootState> = combineReducers<RootState>({
@@ -30,6 +33,7 @@ const rootReducer: Reducer<RootState> = combineReducers<RootState>({
   registration: registrationReducer,
   users: usersReducer,
   books: booksReducer,
+  orders: ordersReducer,
 });
 export default rootReducer;
   

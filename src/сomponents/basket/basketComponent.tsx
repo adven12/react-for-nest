@@ -76,13 +76,22 @@ const  BasketComponent: React.FC<BasketProps> = (props:any) => {
   )
 return state.countBooks
 }
-console.log(props.basketBooks);
-console.log(props.currentBook);
-console.log(props.allBooks);
 
 const userOrder = () =>{
   const { doOrder } = props;
-  doOrder(props.basketBooks);   
+  const local: any = localStorage.getItem('state');
+  const localParce:any = JSON.parse(local);
+  const idCurrentUser = localParce.login.data.id;
+  const allBooks:any = props.basketBooks
+  
+  allBooks.map((item:any) => {
+  item['user_id'] = idCurrentUser
+  item['book_id'] =  item['_id']
+  delete item['_id']
+  }
+  )  
+  
+  doOrder(allBooks);   
   props.handleClose();     
 }
 
@@ -94,6 +103,7 @@ const userOrder = () =>{
           </div>
         ) : (
         props.basketBooks.map((textArr:any) => (
+           
         props.allBooks.map((text:any, index:any) => (
         textArr._id === text._id ?(   
         <div className="basketComponent-content" key={index}>
@@ -131,7 +141,7 @@ const userOrder = () =>{
         Sum products: {sumBooks()}
         </Typography> 
         <Button onClick={() => cleanBasket()}>cleanBasket</Button><br />
-        <Link onClick={() => userOrder()} to="/order">Place your order</Link> 
+        <Button onClick={() => userOrder()}>Place your order</Button> 
         </div>
 
        </div> 

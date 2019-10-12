@@ -1,119 +1,76 @@
 import React from "react";
-import { BasketState } from "../../redux/basket/types";
-import { makeStyles ,Theme, createStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import {CardMedia, Card, CardContent } from "@material-ui/core";
-import no_picture from "../../img/no_picture.png";
-import { Link, Redirect } from "react-router-dom";
 
-const useStyles = makeStyles((theme: Theme) => 
-  createStyles({
-    container: {
-      display: 'flex',
-      textAlign: 'center',
-    },
-    media: {
-      paddingTop: '30%', 
-      width: '90px',
-      hight: '40px',
-      margin: 'auto',
-    },
-    button: {
-    marginTop: '17px',
-    marginRight: '40px',
-    },
-    sumTotal: {
-       textAlign: 'left',
-       marginTop: '45px',
-      },
-      vanish: {
-       display: 'none',
-      }  
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import { Redirect } from "react-router-dom";
 
-  }),
-);
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+    marginTop: theme.spacing(3),
+    overflowX: 'auto',
+  },
+  table: {
+    minWidth: 650,
+  },
+}));
 
-export interface BasketProps {
-  cleanAllBasket: () => object;
-  cleanOneBasket: (data:any,numberBooks:any) => object;
-  AddOneBasket: (numberBooks:any,countBooks:number, book:any) => object;
-  allBooks: string,
-  currentBook: string,
-  basketBooks: any,
-//   numberBooks: number,
-//   countBooks: number,
-
+export interface UsersProps {
+  allOrders: any[],
+  data: any[]
 }
 
-class OrderComponent extends React.Component<any, any> {
-//   const state:BasketState = { 
-//     countBooks: 0,
-//     numberBooks: 1,
-//   };
-//   const classes = useStyles();
 
-//   const mBook = (book:any) => {
-//     const { cleanOneBasket } = props;
-//     cleanOneBasket(book,props.numberBooks);        
-//   }
-//   const pBook = (book:any) => {
-//     const { AddOneBasket } = props;
-//     AddOneBasket(props.numberBooks, props.countBooks, book );        
-//   }
-
-//   const cleanBasket = () =>{
-//     const { cleanAllBasket } = props;
-//     cleanAllBasket();    
-   
-//   }
-//   const sumBooks = () =>{
-//   props.basketBooks.map((item:any) => (
-//   state.countBooks = Number(Number(state.countBooks) + (Number(item.price) * Number(item.quantity))))
-//   )
-// return state.countBooks
-// }
-render() {
-console.log(this.props.basketBooks);
+const OrderComponent: React.FC = (props: any) => {
+  const classes: any = useStyles();
 
   return (
-      <div className="booksComponent">
-        <div className="booksComponent-list ">
-        {this.props.basketBooks.length > 0 ? (
-         this.props.basketBooks.map((text: any, index: any) => (
-            <div className="booksComponent-books" key={index}>
-                    <Card className="booksComponent-books-card" >
-                      <CardContent>
-                        <CardMedia
-                          className="booksComponent-books-card-media"
-                          image={no_picture}
-                          title="Paella dish"
-                          id={text._id}
-                        />
-                        <Typography component="h6">
-                          {text.name}
-                        </Typography>
-                        <Typography color="textSecondary">
-                          {text.price}
-                        </Typography>
-                        <Typography variant="body2" component="p">
-                          {text.descript}
-                          <br />
-                        </Typography>
-                      </CardContent>
-                    </Card>
-            </div>   
-         ))
-        //  (<Button>BUY ALL</Button>)
+    <div className="usersComponent">
+      {props.data.isAdmin === 'admin' ? (
+        props.allOrders ? (
+          <div>
+            <Paper className={classes.root}>
+              <Table className={classes.table}>
+                <TableHead>
+                  <TableRow>
+                    <TableCell align="left">Id</TableCell>
+                    <TableCell align="left">User_id</TableCell>
+                    <TableCell align="left">Book_id</TableCell>
+                    <TableCell align="right">Name</TableCell>
+                    <TableCell align="right">Price</TableCell>
+                    <TableCell align="right">Descript</TableCell>
+                    <TableCell align="right">Full_Descript</TableCell>
+                    <TableCell align="right">Quantity</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {props.allOrders.map((item: any, index: any) => (
+                    <TableRow key={index}>
+                      <TableCell align="left">{item.id}</TableCell>
+                      <TableCell align="right">{item.user_id}</TableCell>
+                      <TableCell align="right">{item.book_id}</TableCell>
+                      <TableCell align="right">{item.name}</TableCell>
+                      <TableCell align="right">{item.price}</TableCell>
+                      <TableCell align="right">{item.descript}</TableCell>
+                      <TableCell align="right">{item.full_descript}</TableCell>
+                      <TableCell align="right">{item.quantity}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Paper>
+          </div>
+        ) : null
 
-        ):(null)}
-        </div>
-       </div> 
-    );
-}
+        ) : (<Redirect to="/login" />)
+      }
+    </div>
+  );
 }
 export default OrderComponent;
-
-
 

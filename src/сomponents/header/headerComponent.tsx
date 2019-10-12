@@ -93,6 +93,7 @@ const HeaderComponent: React.FC = (props: any) => {
             (
               <div>
                 <header className="headerComponent-header">
+                  <Link className="headerComponent-link" to="/order">Order</Link>
                   <Link className="headerComponent-link" to="/users">Users</Link>
                   <Link className="headerComponent-link" to="/books">Books</Link>
                   <Link onClick={() => logout()} className="headerComponent-link " to="/login">Logout</Link>
@@ -116,6 +117,9 @@ const HeaderComponent: React.FC = (props: any) => {
                     <div id="simple-modal-description">
                       <BasketContainer handleClose = {handleClose}/>
                     </div>
+
+
+                    
 
                   </div>
                 </Modal>

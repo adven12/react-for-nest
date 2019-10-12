@@ -9,6 +9,7 @@ import { loadState, saveState } from "./localStorage";
 import { doUsers } from "./users/sagasUsers";
 import {  sagaHome } from "./home/sagasHome";
 import { doBooks, doBooksUpdate, createBooks, doBooksChange, doOrder } from "./books/sagasBooks";
+import { doGetOrders } from "./order/sagasOrder";
 
 export default function configureStore(): Store<RootState> {
   
@@ -29,11 +30,12 @@ export default function configureStore(): Store<RootState> {
         login:store.getState().login,
         books:store.getState().books,
         users:store.getState().users,
+        orders:store.getState().orders,
       });
     });
 
     sagaMiddleware.run(function*() {
-      yield all([doLogin(), doRegistration(), doUsers(), doBooks(), doBooksUpdate(), createBooks(), sagaHome(), doBooksChange(), doOrder()]);
+      yield all([doLogin(), doRegistration(), doUsers(), doBooks(), doBooksUpdate(), createBooks(), sagaHome(), doBooksChange(), doOrder(), doGetOrders()]);
     });
 
   return store;
