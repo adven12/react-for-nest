@@ -98,30 +98,3 @@ export function* doBooksUpdate(): IterableIterator<any> {
       })
     }
 
-    export function* doOrder(): IterableIterator<any> {
-      yield takeEvery('@@basket/DO_ORDER', function*(action: any) {  
-        console.log('1111 ', action.data);
-           
-          try {        
-            const  answerApi = yield call (callApi,'POST', `orders`, action.data); 
-            console.log(answerApi);
-             
-              // yield put ({
-              //   type: '@@books/GET_ALL_BOOKS',
-              //   payload: {
-                                
-              //   }
-              // })
-                        
-          } 
-          
-          catch (error) {
-            yield put({
-              type: `BOOKS_ERROR`,
-              payload: {
-                error: error.message
-              }
-            });
-          }
-        })
-      }

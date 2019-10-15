@@ -8,8 +8,8 @@ import { all } from "redux-saga/effects";
 import { loadState, saveState } from "./localStorage";
 import { doUsers } from "./users/sagasUsers";
 import {  sagaHome } from "./home/sagasHome";
-import { doBooks, doBooksUpdate, createBooks, doBooksChange, doOrder } from "./books/sagasBooks";
-import { doGetOrders } from "./order/sagasOrder";
+import { doBooks, doBooksUpdate, createBooks, doBooksChange } from "./books/sagasBooks";
+import { doGetOrders, doOrder } from "./order/sagasOrder";
 
 export default function configureStore(): Store<RootState> {
   

@@ -1,7 +1,8 @@
 import { RootState } from "../redux/rootReducer";
 import  BasketComponent   from "../сomponents/basket/basketComponent";
 import { connect } from "react-redux";
-import { cleanAllBasket, cleanOneBasket, AddOneBasket, doOrder } from "../redux/basket/actions";
+import { cleanAllBasket, cleanOneBasket, AddOneBasket } from "../redux/basket/actions";
+import {  doOrder } from "../redux/order/actions";
 
 const mapStateToProps = (state: RootState) => ({
   allBooks: state.books.dataProducts,

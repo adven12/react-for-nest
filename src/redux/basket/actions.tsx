@@ -13,8 +13,3 @@ export function AddOneBasket(numberBooks:any, countBooks:number, book:any) {
   numberBooks, countBooks, book
   };
 }
-export function doOrder(data:any) {
-  return { type: '@@basket/DO_ORDER',
-  data
-  };
-}
